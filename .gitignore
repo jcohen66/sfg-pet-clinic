@@ -23,3 +23,7 @@
 hs_err_pid*
 /.idea/
 /sfg-pet-clinic.iml
+/pet-clinic-data/petclinicdata.iml
+/pet-clinic-data/pet-clinic-data.iml
+/pet-clinic-web/pet-clinic-web.iml
+/pet-clinic-web/petclinicweb.iml
