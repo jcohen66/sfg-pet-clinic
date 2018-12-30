@@ -1,7 +1,5 @@
 package guru.springframework.sfgpetclinic.services.map;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-import guru.springframework.sfgpetclinic.model.Owner;
 
 import java.util.HashMap;
 import java.util.HashSet;
