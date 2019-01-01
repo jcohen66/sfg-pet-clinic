@@ -12,4 +12,8 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/find")
+    public String oopsHandler() {
+        return "notImplementd";
+    }
 }

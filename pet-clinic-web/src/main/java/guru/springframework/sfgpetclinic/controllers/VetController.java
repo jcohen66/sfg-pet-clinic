@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/vets")
+@RequestMapping({"/vets"})
 public class VetController {
 
     private final VetService vetService;
@@ -17,11 +17,16 @@ public class VetController {
         this.vetService = vetService;
     }
 
-    @RequestMapping({"", "/", "/index", "/index.html"})
+    @RequestMapping({"", "/", "/index", "/index.html", , "/vets/vets.html"})
     public String listVets(Model model) {
 
         model.addAttribute("vets", vetService.findAll());
 
         return "vets/index";
+    }
+
+    @RequestMapping("/find")
+    public String findVetss() {
+        return "notImplemented";
     }
 }
