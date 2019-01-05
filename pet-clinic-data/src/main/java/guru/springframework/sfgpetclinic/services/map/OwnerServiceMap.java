@@ -30,7 +30,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner findById(Long id) {
-        return null;
+        return super.findById(id);
     }
 
 
@@ -72,8 +72,16 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         super.deleteById(id);
     }
 
+
     @Override
     public Optional<Owner> findByLastName(String lastName) {
-        return Optional.empty();
+        Optional<Owner> found = null;
+        for(Owner owner: super.findAll()) {
+            if(owner.getLastName().equals(lastName)) {
+                Optional.ofNullable(owner);
+                break;
+            }
+        }
+        return found;
     }
 }
