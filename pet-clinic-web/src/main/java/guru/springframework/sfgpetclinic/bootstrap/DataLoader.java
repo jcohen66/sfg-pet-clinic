@@ -17,7 +17,6 @@ public class DataLoader implements CommandLineRunner  {
     private final SpecialtyService specialtiesService;
     private final VisitService visitService;
 
-    @Autowired
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtiesService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
@@ -27,8 +26,8 @@ public class DataLoader implements CommandLineRunner  {
     }
 
     /*
-            When context is completely up and ready, context will call run()
-             */
+    When context is completely up and ready, context will call run()
+    */
     @Override
     public void run(String... args) throws Exception {
 

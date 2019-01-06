@@ -6,10 +6,10 @@
         <groupId>guru.springframework</groupId>
         <version>0.0.1</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pet-clinic-web</artifactId>
     <groupId>guru.springframework</groupId>
+    <modelVersion>4.0.0</modelVersion>
 
     <properties>
         <!-- Web dependencies -->
@@ -17,19 +17,18 @@
         <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
         <webjars-jquery.version>2.2.4</webjars-jquery.version>
         <wro4j.version>1.8.0</wro4j.version>
-
         <jacoco.version>0.8.2</jacoco.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>guru.springframework</groupId>
             <artifactId>pet-clinic-data</artifactId>
             <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

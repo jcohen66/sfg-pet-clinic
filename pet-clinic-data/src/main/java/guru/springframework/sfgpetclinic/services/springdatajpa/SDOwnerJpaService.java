@@ -30,15 +30,14 @@ public class SDOwnerJpaService implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         Set<Owner> owners = new HashSet<>();
-        owners.addAll(ownerRepository.findAll());
+        ownerRepository.findAll().forEach(owners::add);
         return owners;
     }
 
 
     @Override
     public Owner findById(Long id) {
-        Optional<Owner> optionalOwner = Optional.ofNullable(ownerRepository.findById(id));
-        return optionalOwner.orElse(null);
+        return ownerRepository.findById(id).orElse(null);
     }
 
     @Override
