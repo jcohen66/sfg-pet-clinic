@@ -23,7 +23,7 @@ public class SDPetsJpaService implements PetService {
     public Set<Pet> findAll() {
         HashSet<Pet> pets = new HashSet<>();
         petRepository.findAll().forEach(pets::add);
-        return null;
+        return pets;
     }
 
     @Override
