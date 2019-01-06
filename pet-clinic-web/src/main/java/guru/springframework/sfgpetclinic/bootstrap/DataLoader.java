@@ -2,12 +2,14 @@ package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Slf4j
 @Component
 public class DataLoader implements CommandLineRunner  {
 
@@ -31,6 +33,8 @@ public class DataLoader implements CommandLineRunner  {
     @Override
     public void run(String... args) throws Exception {
 
+        log.info("Loading bootstrap data...");
+
         int count = petTypeService.findAll().size();
 
         if(count == 0) {
@@ -50,7 +54,7 @@ public class DataLoader implements CommandLineRunner  {
 
         PetType savedCatPetType = petTypeService.save(cat);
 
-        System.out.println("Loaded PetTypes...");
+        log.info("Loaded PetTypes...");
 
         Specialty radiology = new Specialty();
         radiology.setDescription("Radiology");
@@ -64,14 +68,23 @@ public class DataLoader implements CommandLineRunner  {
         radiology.setDescription("Dentistry");
         Specialty savedDentistry = specialtiesService.save(dentistry);
 
-        System.out.println("Loaded Specialties...");
+        log.info("Loaded Specialties...");
 
         Owner owner1 = new Owner();
+        /*
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
         owner1.setAddress("123 Brickerel");
         owner1.setCity("Miami");
         owner1.setTelephone("1111234567");
+        */
+
+        owner1.builder()
+                .firstName("Michael")
+                .lastName("Weston")
+                .address("123 Brickerel")
+                .city("Miami")
+                .telephone("1111234567");
 
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogPetType);
@@ -97,7 +110,7 @@ public class DataLoader implements CommandLineRunner  {
 
         ownerService.save(owner2);
 
-        System.out.println("Loaded Owners...");
+        log.info("Loaded Owners...");
 
         Visit catVisit = new Visit();
         catVisit.setPet(fionasCat);
@@ -121,6 +134,6 @@ public class DataLoader implements CommandLineRunner  {
 
         vetService.save(vet2);
 
-        System.out.println("Loaded Vets...");
+        log.info("Loaded Vets...");
     }
 }
