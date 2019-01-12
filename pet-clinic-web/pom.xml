@@ -9,6 +9,7 @@
 
     <artifactId>pet-clinic-web</artifactId>
     <groupId>guru.springframework</groupId>
+
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
