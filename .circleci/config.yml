@@ -36,8 +36,7 @@ jobs:
 
       - run: mvn dependency:go-offline
 
-      - dependencies:
-          - mvn install
+      - dependencies: mvn install
 
       - save_cache:
           paths:
