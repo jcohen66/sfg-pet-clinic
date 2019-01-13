@@ -8,6 +8,6 @@ import java.util.Set;
 
 public interface OwnerService extends CrudService<Owner, Long> {
 
-    Optional<Owner> findByLastName(String lastName);
+    Owner findByLastName(String lastName);
     
 }

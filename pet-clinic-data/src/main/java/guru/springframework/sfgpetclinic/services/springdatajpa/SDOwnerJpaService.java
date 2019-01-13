@@ -52,7 +52,7 @@ public class SDOwnerJpaService implements OwnerService {
 
 
     @Override
-    public Optional<Owner> findByLastName(String lastName) {
-        return Optional.ofNullable(ownerRepository.findByLastName(lastName));
+    public Owner findByLastName(String lastName) {
+        return ownerRepository.findByLastName(lastName);
     }
 }
