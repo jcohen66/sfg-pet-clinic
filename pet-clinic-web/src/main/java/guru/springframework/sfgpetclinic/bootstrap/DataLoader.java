@@ -3,7 +3,6 @@ package guru.springframework.sfgpetclinic.bootstrap;
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -71,13 +70,11 @@ public class DataLoader implements CommandLineRunner  {
         log.info("Loaded Specialties...");
 
         Owner owner1 = new Owner();
-        /*
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
         owner1.setAddress("123 Brickerel");
         owner1.setCity("Miami");
         owner1.setTelephone("1111234567");
-        */
 
         owner1.builder()
                 .firstName("Michael")
